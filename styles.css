@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Rampart+One&display=swap');
+
+:root {
+	--clr-gradient-0: rgba(174, 202, 209, 1);
+	--clr-gradient-55: rgba(215, 208, 196, 1);
+	--clr-gradient-100: rgb(224, 161, 187);
+
+	/* Set primary colour */
+	--clr-primary-100: linear-gradient(
+		90deg,
+		var(--clr-gradient-0) 0%,
+		var(--clr-gradient-55) 55%,
+		var(--clr-gradient-100) 100%
+	);
+
+	--font-primary: 'Rampart One', cursive;
+	--font-accent: 'Inconsolata', monospace;
+}
+
+html {
+	font-family: sans-serif;
+	color: white;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-accent);
+}
+
+body {
+	background-color: rgba(0, 0, 0, 0.95);
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	fill: var(--clr-gradient-55);
+}
+
+*::selection {
+	background-color: var(--clr-gradient-100);
+	color: black;
+}
+
+.flow {
+	margin-bottom: 2rem;
+}
+
+.special-font {
+	font-family: var(--font-primary);
+}
+
+.name {
+	font-size: 100px;
+	text-align: center;
+	background-image: var(--clr-primary-100);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	display: inline-block;
+	opacity: 0;
+	animation: fade-in 3s forwards linear;
+}
+
+.name span {
+	animation: text-in 2s forwards;
+	animation-delay: 1s;
+	opacity: 0;
+}
+
+.name span::selection {
+	-webkit-text-fill-color: black;
+	background-color: var(--clr-gradient-100);
+}
+
+.job-role {
+	color: var(--clr-gradient-100);
+	text-align: center;
+	font-size: 3rem;
+	transform: translateY(40px);
+	animation: text-in 2s forwards;
+	animation-delay: 1s;
+	opacity: 0;
+}
+
+.btn {
+	display: inline-flex;
+	cursor: pointer;
+	text-decoration: none;
+	border: 2px solid var(--clr-gradient-55);
+	border-radius: 100vmax;
+	padding: 0.5em 1.5em;
+	font-family: var(--font-accent);
+	font-weight: var(--fw-bold);
+	font-size: 1.2rem;
+	color: white;
+	background-color: transparent;
+	transform: translateY(20px);
+	animation: text-in 0.4s forwards cubic-bezier(0, 2.4, 0.89, 1);
+	animation-delay: 3.4s;
+	opacity: 0;
+}
+
+.btn:hover {
+	background: var(--clr-gradient-55);
+	color: black;
+	transition: all 0.5s ease-in;
+}
+
+.landing {
+	min-height: 100vh;
+	max-width: 80vw;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.socials {
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+	align-items: center;
+}
+
+section.scroll > div {
+	font-size: 1.5rem;
+	display: inline-block;
+	text-align: left;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	animation: text-in 1.2s forwards;
+	animation-delay: 3s;
+	opacity: 0;
+}
+
+div.word-scroll span {
+	display: block;
+}
+div.word-scroll {
+	position: relative;
+	animation: cycle ease 10s infinite;
+	animation-delay: 4s;
+}
+
+@keyframes cycle {
+	0% {
+		top: 0;
+	}
+	0% {
+		top: 0;
+	}
+	14.3% {
+		top: -40px;
+	}
+	14.3% {
+		top: -40px;
+	}
+	28.6% {
+		top: -80px;
+	}
+	28.6% {
+		top: -80px;
+	}
+	42.9% {
+		top: -120px;
+	}
+	42.9% {
+		top: -120px;
+	}
+	57.2% {
+		top: -160px;
+	}
+	57.2% {
+		top: -160px;
+	}
+	71.5% {
+		top: -200px;
+	}
+	71.5% {
+		top: -200px;
+	}
+	85.8% {
+		top: -240px;
+	}
+	85.8% {
+		top: -240px;
+	}
+	100% {
+		top: 0;
+	}
+}
+
+.word-scroll span:nth-child(1) {
+	color: #e4d04b;
+}
+
+.word-scroll span:nth-child(2) {
+	color: #dd4b25;
+}
+
+.word-scroll span:nth-child(3) {
+	color: #2862e9;
+}
+
+.word-scroll span:nth-child(4) {
+	color: #54a245;
+}
+
+.word-scroll span:nth-child(5) {
+	color: #fff;
+}
+
+.word-scroll span:nth-child(6) {
+	color: #00ed64;
+}
+
+.word-scroll span:nth-child(7) {
+	color: #149eca;
+}
+.socials a > svg {
+	transform: translateY(20px);
+}
+
+.socials a > svg:hover {
+	fill: var(--clr-gradient-100);
+}
+
+.linkedin svg {
+	animation: text-in 0.4s forwards cubic-bezier(0, 2.4, 0.89, 1);
+	animation-delay: 2.8s;
+	opacity: 0;
+}
+
+.github svg {
+	animation: text-in 0.4s forwards cubic-bezier(0, 2.4, 0.89, 1);
+	animation-delay: 3.1s;
+	opacity: 0;
+}
+
+@keyframes text-in {
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in {
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes scale {
+	100% {
+		transform: scale(1);
+	}
+}
